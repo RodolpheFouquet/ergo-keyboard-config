@@ -166,7 +166,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <
 &kp TAB    &kp Q           &kp W         &kp E         &kp R         &kp T                              &kp UP                &kp Y        &kp U            &kp I          &kp O          &kp P           &kp BSPC
 &td0       &hml LGUI A     &hml LALT S   &hml LCTRL D  &hml LSHFT F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &hmr RSHFT J     &hmr LCTRL K   &hmr LALT L    &hmr LGUI SEMI  &kp SQT
-&kp LCTRL  &kp Z           &kp X         &kp C         &kp V         &kp B       &kp C_MUTE             &kp DOWN              &kp N        &kp M            &kp COMMA      &kp DOT        &kp FSLH        &trans
+&kp LCTRL  &kp Z           &kp X         &kp C         &kp V         &kp B       &kp C_MUTE             &kp DOWN              &kp N        &kp M            &kp COMMA      &kp DOT        &kp FSLH        &to 4
                                          &kp LGUI       &mo SYM        &kp SPACE                                              &kp ENTER    SMART_NUM  &laucher
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
