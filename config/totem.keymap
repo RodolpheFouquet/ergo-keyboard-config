@@ -30,7 +30,6 @@ ZMK_COMBO(copy_cut, &copy_cut,   LB2 LB3, ALL)  // copy on tap, cut on double-ta
 ZMK_COMBO(paste,    &kp LC(V), LB1 LB2, ALL)
 ZMK_COMBO(undo ,    &kp LC(Z), LB4 LB3, ALL)
 ZMK_COMBO(redo ,    &kp LC(LS(Z)), LB4 LB1, ALL)
-ZMK_COMBO(escape ,  &kp ESC, LT5 LT4, ALL)
 
 ZMK_TAP_DANCE(layerdance, bindings = <&tog 4>, <&tog 5>;
               tapping-term-ms = <200>;)
