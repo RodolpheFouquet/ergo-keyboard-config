@@ -118,6 +118,14 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&savequit>;
             key-positions = <LT3 LT4>;
         };
+        tab {
+            bindings = <&tab>;
+            key-positions = <LM3 LM4>;
+        };
+        escape {
+            bindings = <&escape>;
+            key-positions = <LM3 LM2>;
+        };
     };
 
     macros {
@@ -126,6 +134,20 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             #binding-cells = <0>;
             bindings = <&kp COLON &kp EQUAL>;
             label = "GOEQUAL";
+        };
+
+        escape: escape {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>;
+            label = "ESCAPE";
+        };
+
+        tab: tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>;
+            label = "TAB";
         };
 
         savequit: savequit {
