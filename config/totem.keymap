@@ -120,11 +120,11 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         };
         tab {
             bindings = <&tab>;
-            key-positions = <LM3 LM4>;
+            key-positions = <LM3 LM2>;
         };
         escape {
             bindings = <&escape>;
-            key-positions = <LM3 LM2>;
+            key-positions = <LM3 LM4>;
         };
     };
 
@@ -167,8 +167,8 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <
            &kp Q           &kp W         &kp E          &kp R         &kp T                     &kp Y        &kp U            &kp I          &kp O          &kp P           
            &hml LGUI A     &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G                     &kp H        &hmr RSHFT J     &hmr LCTRL K   &hmr LALT L    &hmr LGUI SEMI  
-&kp LCTRL  &kp Z           &kp X         &kp C          &kp V         &kp B                     &kp N        &kp M            &kp COMMA      &kp DOT        &kp FSLH        &trans
-                                         &kp LGUI       &mo SYM       &kp SPACE                 &kp ENTER    SMART_NUM  &trans
+&kp TAB    &kp Z           &kp X         &kp C          &kp V         &kp B                     &kp N        &kp M            &kp COMMA      &kp DOT        &kp FSLH        &trans
+                                         &kp LGUI       &mo SYM       &kp SPACE                 &kp ENTER    SMART_NUM        &kp BSPC
             >;
         };
 
