@@ -185,10 +185,10 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         num_layer {
             display-name = "Num";
             bindings = <
-        &kp N1  &kp N2  &kp N3 &kp N4 &kp N5            &trans        &trans            &kp UP        &trans    &trans 
-        &kp N6  &kp N7  &kp N8 &kp N9 &kp N0            &trans        &kp LEFT          &kp DOWN      &kp RIGHT &trans  
-&trans  &trans  &trans  &trans &trans &trans            &kp C_VOLUME_UP          &kp DOWN      &kp RIGHT    &trans    &trans   &trans 
-                        &trans &trans &trans            &kp RET       &trans   &trans
+        &kp N1  &kp N2  &kp N3 &kp N4 &kp N5            &trans           &trans              &kp UP        &trans    &trans 
+        &kp N6  &kp N7  &kp N8 &kp N9 &kp N0            &trans           &kp LEFT            &kp DOWN      &kp RIGHT &trans  
+&trans  &trans  &trans  &trans &trans &trans            &kp C_VOLUME_UP  &kp C_VOLUME_DOWN   &kp C_MUTE    &trans    &trans   &trans 
+                        &trans &trans &trans            &kp RET          &trans   &trans
             >;
         };
 
