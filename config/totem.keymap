@@ -26,6 +26,9 @@
 
 ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
               tapping-term-ms = <150>;)
+
+ZMK_TAP_DANCE(parenthesis, bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+              tapping-term-ms = <150>;)
 ZMK_COMBO(copy_cut, &copy_cut,   LB2 LB3, ALL)  // copy on tap, cut on double-tap, active on all layers
 ZMK_COMBO(paste,    &kp LC(V), LB1 LB2, ALL)
 ZMK_COMBO(undo ,    &kp LC(Z), LB4 LB3, ALL)
@@ -175,9 +178,9 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         sym_layer {
             display-name = "Symbols";
             bindings = < 
-                  &kp EXCL               &kp AT           &kp POUND          &kp DOLLAR  &kp PERCENT                &kp CARET  &kp AMPERSAND  &kp ASTRK     &kp SLASH          &kp BACKSLASH 
-                  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp DOT     &kp COLON                  &kp UNDER  &kp PIPE       &kp EQUAL     &kp SINGLE_QUOTE   &kp GRAVE       
-&kp GREATER_THAN  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp COMMA   &kp SEMI                   &kp MINUS  &kp PLUS       &kp QUESTION  &kp DOUBLE_QUOTES  &kp TILDE        &trans
+        &kp EXCL               &kp AT           &kp POUND          &kp DOLLAR  &kp PERCENT                &kp CARET  &kp AMPERSAND  &kp ASTRK     &kp SLASH          &kp BACKSLASH 
+        &parenthesis  &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp DOT     &kp COLON                  &kp UNDER  &kp PIPE       &kp EQUAL     &kp SINGLE_QUOTE   &kp GRAVE       
+&trans  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp COMMA   &kp SEMI                   &kp MINUS  &kp PLUS       &kp QUESTION  &kp DOUBLE_QUOTES  &kp TILDE        &trans
                                                           &trans             &trans      &trans                     &kp INS    &kp DEL        &trans
             >;
         };
@@ -187,7 +190,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <
         &kp N1  &kp N2  &kp N3 &kp N4 &kp N5            &trans           &trans              &kp UP        &trans    &trans 
         &kp N6  &kp N7  &kp N8 &kp N9 &kp N0            &trans           &kp LEFT            &kp DOWN      &kp RIGHT &trans  
-&trans  &trans  &trans  &trans &trans &trans            &kp C_VOLUME_UP  &kp C_VOLUME_DOWN   &kp C_MUTE    &trans    &trans   &trans 
+&trans  &trans  &trans  &trans &trans &trans            &kp C_VOLUME_DOWN  &kp C_VOLUME_UP   &kp C_MUTE    &trans    &trans   &trans 
                         &trans &trans &trans            &kp RET          &trans   &trans
             >;
         };
