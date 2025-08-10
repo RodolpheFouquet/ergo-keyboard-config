@@ -23,6 +23,7 @@
 #define SYSTEM  3 
 
 #define QUICK_TAP_MS 175
+#define SLOW_TAP 300
 
 ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
               tapping-term-ms = <QUICK_TAP_MS>;)
@@ -71,8 +72,29 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             compatible = "zmk,behavior-tap-dance";
             display-name = "Parenthesis left and right";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <SLOW_TAP>;
             bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+        };
+        brack: brack {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "Brackets left and right";
+            #binding-cells = <0>;
+            tapping-term-ms = <SLOW_TAP>;
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+        };
+        brace: brace {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "Braces left and right";
+            #binding-cells = <0>;
+            tapping-term-ms = <SLOW_TAP>;
+            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+        };
+        more: more {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "greater and less than";
+            #binding-cells = <0>;
+            tapping-term-ms = <SLOW_TAP>;
+            bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
         };
     };
 
@@ -87,7 +109,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 
         delete {
             bindings = <&kp DELETE>;
-            key-positions = <27 33>;
+            key-positions = <RM1 RM0>;
         };
 
         goequal {
@@ -147,7 +169,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             display-name = "Base";
             bindings = <
            &kp Q           &kp W         &kp E          &kp R         &kp T                     &kp Y        &kp U            &kp I          &kp O          &kp P           
-           &hml LGUI A    &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G                     &kp H        &hmr RSHFT J     &hmr LCTRL K   &hmr LALT L    &hmr LGUI SEMI  
+           &hml LGUI A     &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G                     &kp H        &hmr RSHFT J     &hmr LCTRL K   &hmr LALT L    &hmr LGUI SEMI  
 &kp TAB    &kp Z           &kp X         &kp C          &kp V         &kp B                     &kp N        &kp M            &kp COMMA      &kp DOT        &kp FSLH        &kp ESC
                                          &kp LGUI       &mo SYM       &kp SPACE                 &kp ENTER    SMART_NUM        &kp BSPC
             >;
@@ -156,10 +178,10 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         sym_layer {
             display-name = "Symbols";
             bindings = < 
-        &kp EXCL               &kp AT           &kp POUND          &kp DOLLAR  &kp PERCENT                &kp CARET  &kp AMPERSAND  &kp ASTRK     &kp SLASH          &kp BACKSLASH 
-        &par  &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp DOT     &kp COLON                  &kp UNDER  &kp PIPE       &kp EQUAL     &kp SINGLE_QUOTE   &kp GRAVE       
-&trans  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp COMMA   &kp SEMI                   &kp MINUS  &kp PLUS       &kp QUESTION  &kp DOUBLE_QUOTES  &kp TILDE        &trans
-                                                          &trans             &trans      &trans                     &kp INS    &kp DEL        &trans
+        &kp EXCL    &kp AT  &kp POUND   &kp DOLLAR  &kp PERCENT                &kp CARET  &kp AMPERSAND  &kp ASTRK     &kp SLASH          &kp BACKSLASH 
+        &par        &brace  &brack      &kp DOT     &kp COLON                  &kp UNDER  &kp PIPE       &kp EQUAL     &kp SINGLE_QUOTE   &kp GRAVE       
+&trans  &more       &trans  &trans      &kp COMMA   &kp SEMI                   &kp MINUS  &kp PLUS       &kp QUESTION  &kp DOUBLE_QUOTES  &kp TILDE        &trans
+                            &trans      &trans      &trans                     &kp INS    &kp DEL        &trans
             >;
         };
 
