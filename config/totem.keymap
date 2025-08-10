@@ -52,29 +52,11 @@ ZMK_HOLD_TAP(hmr,
     bindings = <&kp>, <&kp>;
 )
 
-
-&mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
-
-&msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
-
 #define SMART_NUM &smart_num NUM 0
 ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
               tapping-term-ms = <200>;)
-
-&msc {
-    acceleration-exponent = <1>;      // 0
-    time-to-max-speed-ms = <100>;       // 300
-    delay-ms = <0>;                   // 0
-};
-
-&mmv {
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent = <1>;
-    trigger-period-ms = <16>;
-};
-
 
 
 / {
