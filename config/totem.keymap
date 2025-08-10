@@ -27,8 +27,6 @@
 ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
               tapping-term-ms = <QUICK_TAP_MS>;)
 
-ZMK_TAP_DANCE(parenthesis, bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
-              tapping-term-ms = <QUICK_TAP_MS>;)
 ZMK_COMBO(copy_cut, &copy_cut,   LB2 LB3, ALL)  // copy on tap, cut on double-tap, active on all layers
 ZMK_COMBO(paste,    &kp LC(V), LB1 LB2, ALL)
 ZMK_COMBO(undo ,    &kp LC(Z), LB4 LB3, ALL)
@@ -69,11 +67,12 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         };
     };
     behaviors {
-        td0: td0 {
+        par: par {
             compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
+            display-name = "Parenthesis left and right";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
         };
     };
 
@@ -158,7 +157,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             display-name = "Symbols";
             bindings = < 
         &kp EXCL               &kp AT           &kp POUND          &kp DOLLAR  &kp PERCENT                &kp CARET  &kp AMPERSAND  &kp ASTRK     &kp SLASH          &kp BACKSLASH 
-        &parenthesis  &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp DOT     &kp COLON                  &kp UNDER  &kp PIPE       &kp EQUAL     &kp SINGLE_QUOTE   &kp GRAVE       
+        &par  &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp DOT     &kp COLON                  &kp UNDER  &kp PIPE       &kp EQUAL     &kp SINGLE_QUOTE   &kp GRAVE       
 &trans  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp COMMA   &kp SEMI                   &kp MINUS  &kp PLUS       &kp QUESTION  &kp DOUBLE_QUOTES  &kp TILDE        &trans
                                                           &trans             &trans      &trans                     &kp INS    &kp DEL        &trans
             >;
