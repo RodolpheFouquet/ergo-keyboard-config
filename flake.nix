@@ -11,9 +11,7 @@
   outputs = { self, nixpkgs, zmk-nix }: let
     forAllSystems = nixpkgs.lib.genAttrs (nixpkgs.lib.attrNames zmk-nix.packages);
   in {
-    packages = forAllSystems (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in rec {
+    packages = forAllSystems (system: rec {
       default = totem;
 
       totem = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
@@ -70,44 +68,6 @@
       flash-eyelash_corne = zmk-nix.packages.${system}.flash.override { firmware = eyelash_corne; };
       flash-sofle = zmk-nix.packages.${system}.flash.override { firmware = sofle; };
       update = zmk-nix.packages.${system}.update;
-
-      # Keymap drawings
-      keymap-totem = pkgs.stdenv.mkDerivation {
-        name = "keymap-totem";
-        src = self;
-        buildInputs = [ pkgs.keymap-drawer ];
-        buildPhase = ''
-          mkdir -p $out
-          keymap parse -z config/totem.keymap > keymap.yaml
-          keymap -c keymap-drawer/totem.yaml draw keymap.yaml > $out/totem.svg
-        '';
-        installPhase = "true";
-      };
-
-      keymap-eyelash_corne = pkgs.stdenv.mkDerivation {
-        name = "keymap-eyelash_corne";
-        src = self;
-        buildInputs = [ pkgs.keymap-drawer ];
-        buildPhase = ''
-          mkdir -p $out
-          keymap parse -z config/eyelash_corne.keymap > keymap.yaml
-          keymap draw keymap.yaml > $out/eyelash_corne.svg
-        '';
-        installPhase = "true";
-      };
-
-      keymap-sofle = pkgs.stdenv.mkDerivation {
-        name = "keymap-sofle";
-        src = self;
-        buildInputs = [ pkgs.keymap-drawer ];
-        buildPhase = ''
-          mkdir -p $out
-          keymap parse -z config/sofle.keymap > keymap.yaml
-          keymap draw keymap.yaml > $out/sofle.svg
-        '';
-        installPhase = "true";
-      };
-
     });
 
     devShells = forAllSystems (system: {

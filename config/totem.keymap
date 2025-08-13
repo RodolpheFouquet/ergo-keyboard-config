@@ -1,5 +1,3 @@
-#define KEYMAP_DRAWER 1
-
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 

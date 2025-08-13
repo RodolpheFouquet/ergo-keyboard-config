@@ -41,12 +41,9 @@ nix build .#sofle
 ```
 
 ### Build All Keyboards
-
-**Important**: When building multiple keyboards, use named outputs to prevent overwrites:
-
 ```bash
-# Build all keyboards with named output links (recommended)
-nix build .#totem .#eyelash_corne .#sofle -o totem-firmware -o eyelash_corne-firmware -o sofle-firmware
+# Build all keyboards at once
+nix build .#totem .#eyelash_corne .#sofle
 ```
 
 ## Flashing Commands
@@ -93,23 +90,10 @@ If automatic flashing doesn't work, you can manually flash the generated firmwar
 
 ### Firmware File Locations
 
-After building, firmware files are located in:
-- Single build: `./result/zmk_left.uf2` and `./result/zmk_right.uf2`
-- Multiple builds with named outputs: `./totem-firmware/`, `./eyelash_corne-firmware/`, `./sofle-firmware/`
-
-## Keymap Visualization
-
-Generate SVG visualizations of your keymaps using keymap-drawer:
-
-### Eyelash Corne
-```bash
-# Generate keymap visualization for eyelash_corne
-nix build .#keymap-eyelash_corne
-
-# Output: ./result/eyelash_corne.svg
-```
-
-Note: Keymap generation currently works for eyelash_corne. Support for totem and sofle requires additional configuration due to dependency complexities.
+After building, firmware files are located in `./result/`:
+- `totem_left.uf2` and `totem_right.uf2`
+- `eyelash_corne_left.uf2` and `eyelash_corne_right.uf2`  
+- `sofle_left.uf2` and `sofle_right.uf2`
 
 ## Configuration Files
 
