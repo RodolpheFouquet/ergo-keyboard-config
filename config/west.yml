@@ -2,7 +2,7 @@ manifest:
   remotes:
       # zmk official
     - name: zmkfirmware
-      url-base: https://github.com/Unicowd/zmk
+      url-base: https://github.com/Unicowd
     - name: dsifry
       url-base: https://github.com/dsifry
     - name: urob
