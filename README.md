@@ -9,10 +9,11 @@ This document lists all available commands for generating and flashing firmware 
 
 ## Keyboard Types
 
-This repository supports three keyboard types:
+This repository supports four keyboard types:
 - **Totem** (seeeduino_xiao_ble controller)
 - **Eyelash Corne** (custom board)
 - **Sofle** (nice_nano_v2 controller)
+- **Charybdis** (nice_nano_v2 controller)
 
 ## Firmware Generation Commands
 
@@ -40,10 +41,18 @@ nix build .#sofle
 # Build output location: ./result/
 ```
 
+### Charybdis
+```bash
+# Build both left and right firmware
+nix build .#charybdis
+
+# Build output location: ./result/
+```
+
 ### Build All Keyboards
 ```bash
 # Build all keyboards at once
-nix build .#totem .#eyelash_corne .#sofle
+nix build .#totem .#eyelash_corne .#sofle .#charybdis
 ```
 
 ## Flashing Commands
@@ -64,6 +73,12 @@ nix run .#flash-eyelash_corne
 ```bash
 # Flash firmware to connected device
 nix run .#flash-sofle
+```
+
+### Charybdis
+```bash
+# Flash firmware to connected device
+nix run .#flash-charybdis
 ```
 
 ## Additional Commands
