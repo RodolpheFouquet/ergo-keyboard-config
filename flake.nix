@@ -13,16 +13,17 @@
   in {
     packages = forAllSystems (system: rec {
       default = totem;
+      firmware = totem;
 
       totem = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
         name = "totem";
 
-        src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".json" ".keymap" ".overlay" ".shield" ".yml" "_defconfig" ];
+        src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".h" ".json" ".keymap" ".overlay" ".shield" ".yaml" ".yml" "_defconfig" ];
 
         board = "seeeduino_xiao_ble";
         shield = "totem_%PART%";
 
-        zephyrDepsHash = "sha256-wTe5Sw5ajPVuAADXcjnAcm3ZH5bnjuIJkMQPZUwF5ic=";
+        zephyrDepsHash = "sha256-/h0hJidWcJ6lYI8jUqrGr3fmOmeCIXucax6LXIySJuQ=";
 
         meta = {
           description = "ZMK firmware for TOTEM";
@@ -34,11 +35,12 @@
       eyelash_corne = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
         name = "eyelash_corne";
 
-        src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".json" ".keymap" ".overlay" ".shield" ".yml" "_defconfig" ];
+        src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".h" ".json" ".keymap" ".overlay" ".shield" ".yaml" ".yml" "_defconfig" ];
 
         board = "eyelash_corne_%PART%";
 
-        zephyrDepsHash = "sha256-wTe5Sw5ajPVuAADXcjnAcm3ZH5bnjuIJkMQPZUwF5ic=";
+        inherit (totem) westDeps;
+        zephyrDepsHash = "sha256-/h0hJidWcJ6lYI8jUqrGr3fmOmeCIXucax6LXIySJuQ=";
 
         meta = {
           description = "ZMK firmware for Eyelash Corne";
@@ -50,12 +52,14 @@
       sofle = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
         name = "sofle";
 
-        src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".json" ".keymap" ".overlay" ".shield" ".yml" "_defconfig" ];
+        src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".h" ".json" ".keymap" ".overlay" ".shield" ".yaml" ".yml" "_defconfig" ];
 
         board = "nice_nano_v2";
         shield = "sofle_%PART%";
+        enableZmkStudio = true;
 
-        zephyrDepsHash = "sha256-wTe5Sw5ajPVuAADXcjnAcm3ZH5bnjuIJkMQPZUwF5ic=";
+        inherit (totem) westDeps;
+        zephyrDepsHash = "sha256-/h0hJidWcJ6lYI8jUqrGr3fmOmeCIXucax6LXIySJuQ=";
 
         meta = {
           description = "ZMK firmware for Sofle";
@@ -67,12 +71,13 @@
       charybdis = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
         name = "charybdis";
 
-        src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".json" ".keymap" ".overlay" ".shield" ".yml" "_defconfig" ];
+        src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".h" ".json" ".keymap" ".overlay" ".shield" ".yaml" ".yml" "_defconfig" ];
 
         board = "nice_nano_v2";
         shield = "charybdis_%PART%";
 
-        zephyrDepsHash = "sha256-s2aS0oZxzqESwWoBEK4OC2ebgZjTqW5NS2P6zQ4vf7o=";
+        inherit (totem) westDeps;
+        zephyrDepsHash = "sha256-/h0hJidWcJ6lYI8jUqrGr3fmOmeCIXucax6LXIySJuQ=";
 
         meta = {
           description = "ZMK firmware for Charybdis";
