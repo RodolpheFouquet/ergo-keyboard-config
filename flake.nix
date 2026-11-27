@@ -23,7 +23,7 @@
         board = "seeeduino_xiao_ble";
         shield = "totem_%PART%";
 
-        zephyrDepsHash = "sha256-/h0hJidWcJ6lYI8jUqrGr3fmOmeCIXucax6LXIySJuQ=";
+        zephyrDepsHash = "sha256-fhUBHgbzFuxBmQGxK17vtLNYp0dqrhOceQv027YTr4g=";
 
         meta = {
           description = "ZMK firmware for TOTEM";
@@ -40,7 +40,7 @@
         board = "eyelash_corne_%PART%";
 
         inherit (totem) westDeps;
-        zephyrDepsHash = "sha256-/h0hJidWcJ6lYI8jUqrGr3fmOmeCIXucax6LXIySJuQ=";
+        zephyrDepsHash = "sha256-fhUBHgbzFuxBmQGxK17vtLNYp0dqrhOceQv027YTr4g=";
 
         meta = {
           description = "ZMK firmware for Eyelash Corne";
@@ -59,7 +59,7 @@
         enableZmkStudio = true;
 
         inherit (totem) westDeps;
-        zephyrDepsHash = "sha256-/h0hJidWcJ6lYI8jUqrGr3fmOmeCIXucax6LXIySJuQ=";
+        zephyrDepsHash = "sha256-fhUBHgbzFuxBmQGxK17vtLNYp0dqrhOceQv027YTr4g=";
 
         meta = {
           description = "ZMK firmware for Sofle";
@@ -77,7 +77,7 @@
         shield = "charybdis_%PART%";
 
         inherit (totem) westDeps;
-        zephyrDepsHash = "sha256-/h0hJidWcJ6lYI8jUqrGr3fmOmeCIXucax6LXIySJuQ=";
+        zephyrDepsHash = "sha256-fhUBHgbzFuxBmQGxK17vtLNYp0dqrhOceQv027YTr4g=";
 
         meta = {
           description = "ZMK firmware for Charybdis";

@@ -25,6 +25,9 @@
 #define SYSTEM  3  
 #define GAME  4  
 
+#undef ALL
+#define ALL BASE SYM NUM SYSTEM GAME
+
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left hand
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right hand
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2   // thumbs
@@ -38,9 +41,6 @@ ZMK_COMBO(paste,    &kp LC(V), LB1 LB2, ALL)
 ZMK_COMBO(undo ,    &kp LC(Z), LB4 LB3, ALL)
 ZMK_COMBO(redo ,    &kp LC(LS(Z)), LB4 LB1, ALL)
 ZMK_COMBO(escape ,  &kp ESC, LT5 LT4, ALL)
-
-ZMK_TAP_DANCE(layerdance, bindings = <&tog 4>, <&tog 5>;
-              tapping-term-ms = <200>;)
 
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
@@ -125,7 +125,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 
         delete {
             bindings = <&kp DELETE>;
-            key-positions = <27 33>;
+            key-positions = <RM1 RM0>;
         };
 
         goequal {
@@ -144,14 +144,12 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp COLON &kp EQUAL>;
-            label = "GOEQUAL";
         };
 
         savequit: savequit {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp COLON &kp W &kp Q>;
-            label = "SAVEQUIT";
         };
 
     };
