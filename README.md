@@ -105,14 +105,13 @@ If automatic flashing doesn't work, you can manually flash the generated firmwar
 
 ### Firmware File Locations
 
-After building, firmware files are located in `./result/`:
-- `totem_left.uf2` and `totem_right.uf2`
-- `eyelash_corne_left.uf2` and `eyelash_corne_right.uf2`  
-- `sofle_left.uf2` and `sofle_right.uf2`
+After building a keyboard, firmware files are located in `./result/`:
+- `zmk_left.uf2` and `zmk_right.uf2`
 
 ## Configuration Files
 
 Each keyboard has its configuration files in:
-- Totem: `config/boards/shields/totem/`
-- Eyelash Corne: `boards/arm/eyelash_corne/` and `config/`
+- Totem: `boards/shields/totem/`, `config/totem.keymap`, and `config/totem.conf`
+- Eyelash Corne: `boards/arm/eyelash_corne/`, `config/eyelash_corne.keymap`, and `config/eyelash_corne.conf`
 - Sofle: `config/sofle.keymap` and `config/sofle.conf`
+- Charybdis: `boards/shields/charybdis/`, `config/charybdis.keymap`, and `config/charybdis.conf`

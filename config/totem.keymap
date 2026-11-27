@@ -22,6 +22,9 @@
 #define NUM 2
 #define SYSTEM  3 
 
+#undef ALL
+#define ALL BASE SYM NUM SYSTEM
+
 #define QUICK_TAP_MS 175
 #define SLOW_TAP 300
 
@@ -140,35 +143,30 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp COLON &kp EQUAL>;
-            label = "GOEQUAL";
         };
 
         escape: escape {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp ESC>;
-            label = "ESCAPE";
         };
 
         tab: tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp TAB>;
-            label = "TAB";
         };
 
         savequit: savequit {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp ESC &kp COLON &kp W &kp Q>;
-            label = "SAVEQUIT";
         };
         
         save: save {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp ESC &kp COLON &kp W>;
-            label = "SAVE";
         };
 
     };
